@@ -1,0 +1,1011 @@
+/* ==================================================================
+   ENGLISH TEACHER — Landing page
+   ------------------------------------------------------------------
+   Índice:
+   1. Variables (colores, tipografía, medidas)
+   2. Reset y estilos base
+   3. Utilidades (contenedor, botones, etiquetas)
+   4. Encabezado y menú
+   5. Hero
+   6. Secciones generales
+   7. Sobre mí
+   8. Clases (tarjetas)
+   9. Cómo funcionan (pasos)
+   10. Para quién son (fondo oscuro)
+   11. Contacto
+   12. Footer
+   13. Botón flotante de WhatsApp
+   14. Responsive
+   ================================================================== */
+
+
+/* ==================================================================
+   1. VARIABLES
+   Cambia aquí los colores y medidas para modificar todo el sitio.
+   ================================================================== */
+:root {
+  /* Colores principales */
+  --color-primary: #4263eb;
+  --color-primary-dark: #3451d1;
+  --color-primary-soft: #edf1fe;
+  --color-dark: #172033;
+  --color-dark-soft: #222d45;
+  --color-text: #4a5468;
+  --color-text-light: #7b8496;
+  --color-bg: #ffffff;
+  --color-bg-light: #f5f7fb;
+  --color-border: #e6e9f0;
+  --color-white: #ffffff;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1ebe5b;
+
+  /* Tipografía */
+  --font-main: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Medidas */
+  --container-width: 1140px;
+  --header-height: 72px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 999px;
+
+  /* Sombras suaves */
+  --shadow-sm: 0 2px 8px rgba(23, 32, 51, 0.06);
+  --shadow-md: 0 10px 30px rgba(23, 32, 51, 0.08);
+  --shadow-lg: 0 20px 50px rgba(23, 32, 51, 0.12);
+
+  /* Transición estándar */
+  --transition: 0.25s ease;
+}
+
+
+/* ==================================================================
+   2. RESET Y ESTILOS BASE
+   ================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;                         /* Scroll suave */
+  scroll-padding-top: var(--header-height);        /* Compensa el menú fijo */
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-dark);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* Foco visible para navegación con teclado */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+
+/* ==================================================================
+   3. UTILIDADES
+   ================================================================== */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.text-accent {
+  color: var(--color-primary);
+}
+
+/* Etiqueta pequeña (pill) */
+.tag {
+  display: inline-block;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+  border-radius: var(--radius-full);
+}
+
+/* --- Botones --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 14px 28px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition),
+              border-color var(--transition), transform var(--transition),
+              box-shadow var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  box-shadow: 0 8px 20px rgba(66, 99, 235, 0.3);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 12px 24px rgba(66, 99, 235, 0.35);
+}
+
+.btn--outline {
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  border-color: var(--color-border);
+}
+
+.btn--outline:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn--whatsapp {
+  color: var(--color-white);
+  background-color: var(--color-whatsapp);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn--whatsapp:hover {
+  background-color: var(--color-whatsapp-dark);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.2);
+}
+
+.btn__icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+
+/* ==================================================================
+   4. ENCABEZADO Y MENÚ
+   ================================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+
+/* Clase añadida con JavaScript al hacer scroll */
+.header.is-scrolled {
+  border-bottom-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  letter-spacing: -0.02em;
+}
+
+.logo span {
+  color: var(--color-primary);
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav__link {
+  display: block;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  border-radius: var(--radius-full);
+  transition: color var(--transition), background-color var(--transition);
+}
+
+.nav__link:hover {
+  color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+/* Botón hamburguesa (oculto en escritorio) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-dark);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* Animación del icono a "X" cuando el menú está abierto */
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ==================================================================
+   5. HERO
+   ================================================================== */
+.hero {
+  padding: 80px 0 100px;
+  background: linear-gradient(180deg, var(--color-bg-light) 0%, var(--color-white) 100%);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 64px;
+}
+
+.hero__title {
+  margin: 20px 0;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  letter-spacing: -0.02em;
+}
+
+.hero__title .text-accent {
+  white-space: nowrap;   /* Mantiene "a tu ritmo" en una sola línea */
+}
+
+.hero__text {
+  max-width: 520px;
+  margin-bottom: 36px;
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Tarjeta de la fotografía */
+.hero__media {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(160deg, var(--color-primary-soft) 0%, #dfe6fd 100%);
+  border: 8px solid var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.photo-card__img {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: calc(var(--radius-lg) - 8px);
+}
+
+.photo-card__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  height: 100%;
+  color: var(--color-primary);
+}
+
+.photo-card__placeholder svg {
+  width: 110px;
+  height: 110px;
+  opacity: 0.8;
+}
+
+.photo-card__placeholder span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+}
+
+.photo-card__badge {
+  position: absolute;
+  bottom: 28px;
+  left: -32px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+}
+
+.photo-card__badge-dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-whatsapp);
+  border-radius: 50%;
+}
+
+
+/* ==================================================================
+   6. SECCIONES GENERALES
+   ================================================================== */
+.section {
+  padding: 96px 0;
+}
+
+.section--light {
+  background-color: var(--color-bg-light);
+}
+
+.section__header {
+  max-width: 620px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.section__label {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.section__label--light {
+  color: #9fb2ff;
+}
+
+.section__title {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  letter-spacing: -0.01em;
+}
+
+.section__subtitle {
+  margin-top: 14px;
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+}
+
+
+/* ==================================================================
+   7. SOBRE MÍ
+   ================================================================== */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
+}
+
+.about__content .section__title {
+  margin-bottom: 24px;
+}
+
+.about__content p + p {
+  margin-top: 16px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  text-align: center;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-card__number {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.stat-card__label {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--color-text-light);
+}
+
+
+/* ==================================================================
+   8. CLASES (TARJETAS)
+   ================================================================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.card {
+  padding: 40px 32px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition),
+              border-color var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(66, 99, 235, 0.3);
+  box-shadow: var(--shadow-md);
+}
+
+.card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 24px;
+  color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.card:hover .card__icon {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.card__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.card__title {
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.card__text {
+  color: var(--color-text);
+}
+
+
+/* ==================================================================
+   9. CÓMO FUNCIONAN (PASOS)
+   ================================================================== */
+.steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Línea que une los pasos (solo escritorio) */
+.steps::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: calc(100% / 6);
+  right: calc(100% / 6);
+  height: 2px;
+  background-image: linear-gradient(90deg, var(--color-border) 50%, transparent 50%);
+  background-size: 14px 2px;
+}
+
+.step {
+  position: relative;
+  text-align: center;
+  padding: 0 12px;
+}
+
+.step__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border: 6px solid var(--color-white);
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(66, 99, 235, 0.3);
+  transition: transform var(--transition);
+}
+
+.step:hover .step__number {
+  transform: translateY(-4px);
+}
+
+.step__title {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.step__text {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+
+/* ==================================================================
+   10. PARA QUIÉN SON (FONDO AZUL OSCURO)
+   ================================================================== */
+.section--dark {
+  background-color: var(--color-dark);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.section--dark .section__title {
+  color: var(--color-white);
+}
+
+.audience {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
+}
+
+.audience__text {
+  margin-top: 20px;
+  font-size: 1.05rem;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.checklist li {
+  position: relative;
+  padding: 16px 20px 16px 60px;
+  font-weight: 500;
+  color: var(--color-white);
+  background-color: var(--color-dark-soft);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-sm);
+  transition: transform var(--transition), background-color var(--transition);
+}
+
+.checklist li:hover {
+  transform: translateX(4px);
+  background-color: #28344f;
+}
+
+/* Icono de "check" dibujado con CSS */
+.checklist li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  transform: translateY(-50%);
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}
+
+.checklist li::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 29px;
+  width: 6px;
+  height: 11px;
+  border: solid var(--color-white);
+  border-width: 0 2px 2px 0;
+  transform: translateY(-62%) rotate(45deg);
+}
+
+
+/* ==================================================================
+   11. CONTACTO
+   ================================================================== */
+.contact {
+  position: relative;
+  overflow: hidden;
+  padding: 72px 40px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.88);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #3149c4 100%);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Círculos decorativos suaves */
+.contact::before,
+.contact::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.07);
+  pointer-events: none;
+}
+
+.contact::before {
+  width: 320px;
+  height: 320px;
+  top: -140px;
+  right: -80px;
+}
+
+.contact::after {
+  width: 220px;
+  height: 220px;
+  bottom: -110px;
+  left: -60px;
+}
+
+.contact > * {
+  position: relative;
+  z-index: 1;
+}
+
+.contact__eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.contact__title {
+  max-width: 640px;
+  margin: 0 auto 18px;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  color: var(--color-white);
+}
+
+.contact__text {
+  max-width: 520px;
+  margin: 0 auto 36px;
+  font-size: 1.05rem;
+}
+
+
+/* ==================================================================
+   12. FOOTER
+   ================================================================== */
+.footer {
+  padding: 28px 0;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  border-top: 1px solid var(--color-border);
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+
+/* ==================================================================
+   13. BOTÓN FLOTANTE DE WHATSAPP
+   ================================================================== */
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  color: var(--color-white);
+  background-color: var(--color-whatsapp);
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  transition: transform var(--transition), background-color var(--transition);
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px);
+  background-color: var(--color-whatsapp-dark);
+}
+
+.whatsapp-float svg {
+  width: 30px;
+  height: 30px;
+}
+
+
+/* ==================================================================
+   14. RESPONSIVE
+   ================================================================== */
+
+/* --- Tablet --- */
+@media (max-width: 960px) {
+  .hero {
+    padding: 56px 0 80px;
+  }
+
+  .hero__inner,
+  .about,
+  .audience {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero__content {
+    text-align: center;
+  }
+
+  .hero__text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .photo-card {
+    max-width: 360px;
+  }
+
+  .about__content,
+  .audience__content {
+    text-align: center;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* La tercera tarjeta ocupa el ancho completo en tablet */
+  .cards .card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+}
+
+/* --- Móvil: menú desplegable --- */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    padding: 12px 24px 20px;
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+
+    /* Oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity var(--transition), transform var(--transition),
+                visibility var(--transition);
+  }
+
+  /* Clase añadida con JavaScript al abrir el menú */
+  .nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .nav__link {
+    padding: 14px 16px;
+    font-size: 1rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .steps::before {
+    display: none;
+  }
+}
+
+/* --- Móvil pequeño --- */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .section__header {
+    margin-bottom: 40px;
+  }
+
+  .hero__title {
+    font-size: 2.2rem;
+  }
+
+  .hero__text {
+    font-size: 1rem;
+  }
+
+  /* Botones a todo el ancho para que sean fáciles de tocar */
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn,
+  .contact .btn {
+    width: 100%;
+  }
+
+  .photo-card__badge {
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+
+  .cards,
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: 24px 16px;
+  }
+
+  .card {
+    padding: 32px 24px;
+  }
+
+  .contact {
+    padding: 56px 24px;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 54px;
+    height: 54px;
+  }
+}
+
+/* --- Accesibilidad: reducir movimiento si el usuario lo prefiere --- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
