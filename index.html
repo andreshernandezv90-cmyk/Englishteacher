@@ -2,302 +2,375 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- ==========================================================
-       SEO básico (EDITAR con los datos reales del profesor)
-       ========================================================== -->
-  <title>English Teacher | Clases de inglés en línea</title>
-  <meta name="description" content="Clases de inglés en línea personalizadas de acuerdo con tu nivel, tus objetivos y tu ritmo de aprendizaje. Agenda tu clase por WhatsApp.">
-  <meta name="theme-color" content="#4263eb">
+  <!-- SEO -->
+  <title>YES! | Clases de inglés conversacional en línea desde casa</title>
+  <meta name="description" content="Clases de inglés en línea con un profesor con 15 años de experiencia. Clases conversacionales individuales o en pareja, de nivel básico a avanzado. Consulta precios y horarios por WhatsApp.">
+  <meta name="theme-color" content="#2340D9">
+  <!-- EDITAR: cambia por la URL real cuando el sitio esté publicado -->
+  <link rel="canonical" href="https://example.com/">
 
-  <!-- Tipografía: Poppins (Google Fonts) -->
+  <!-- Open Graph / redes sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="YES!">
+  <meta property="og:title" content="YES! | La dulzura de aprender inglés desde casa">
+  <meta property="og:description" content="Aprende inglés hablando inglés. Clases conversacionales en línea, de básico a avanzado, con 15 años de experiencia.">
+  <!-- EDITAR: usa la URL absoluta de la imagen al publicar -->
+  <meta property="og:image" content="img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+
+  <!-- Tipografía: Fraunces (títulos) + Onest (texto) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..800,100&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Estilos -->
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
+  <!-- Iconos SVG reutilizables -->
+  <svg width="0" height="0" class="sr-only" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.29.18-1.41-.08-.12-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.37l-.36-.22-3.74.99 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.17-1.24-6.16-3.48-8.4Z"/>
+    </symbol>
+    <symbol id="i-talk" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M7 4h7a5 5 0 0 1 5 5v1a5 5 0 0 1-5 5h-3l-4 3v-3.2A5 5 0 0 1 2 10V9a5 5 0 0 1 5-5Z M21 11.5v.5a4 4 0 0 1-2 3.46V19l-2.6-2"/>
+    </symbol>
+    <symbol id="i-loop" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 0 1 13.66-5.66L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.66 5.66L4 15.5M4 20v-4.5h4.5"/>
+    </symbol>
+    <symbol id="i-path" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M5 19c0-4 3-5 7-5s7-1 7-5M5 19h.01M19 5v4"/>
+      <circle cx="5" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.75"/>
+      <circle cx="19" cy="5" r="2" fill="none" stroke="currentColor" stroke-width="1.75"/>
+    </symbol>
+    <symbol id="i-seal" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M12 2.5l2.2 1.6 2.7-.1.8 2.6 2.2 1.6-.9 2.6.9 2.6-2.2 1.6-.8 2.6-2.7-.1L12 19.5l-2.2-1.6-2.7.1-.8-2.6-2.2-1.6.9-2.6-.9-2.6 2.2-1.6.8-2.6 2.7.1Z M9 11l2 2 4-4"/>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
   <!-- ============================================================
-       ENCABEZADO / MENÚ
+       NAVEGACIÓN
        ============================================================ -->
   <header class="header" id="header">
     <div class="container header__inner">
 
-      <!-- Logotipo de texto temporal -->
-      <a href="#inicio" class="logo" aria-label="EnglishTeacher, ir al inicio">
-        English<span>Teacher</span>
+      <a href="#inicio" class="brand" aria-label="YES!, ir al inicio">
+        <span class="brand__word" aria-hidden="true">YES<span class="brand__bang"><i></i></span></span>
+        <span class="brand__tag" aria-hidden="true">La dulzura de aprender<br>inglés desde casa</span>
       </a>
 
-      <!-- Botón de menú (solo visible en móvil) -->
-      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
-      </button>
-
-      <!-- Menú de navegación -->
       <nav class="nav" id="nav-menu" aria-label="Navegación principal">
         <ul class="nav__list">
           <li><a href="#inicio" class="nav__link">Inicio</a></li>
-          <li><a href="#sobre-mi" class="nav__link">Sobre mí</a></li>
+          <li><a href="#metodologia" class="nav__link">Metodología</a></li>
+          <li><a href="#niveles" class="nav__link">Niveles</a></li>
           <li><a href="#clases" class="nav__link">Clases</a></li>
           <li><a href="#contacto" class="nav__link">Contacto</a></li>
         </ul>
       </nav>
+
+      <a href="https://wa.me/" class="btn btn--primary btn--sm header__cta" data-whatsapp="info" target="_blank" rel="noopener">
+        <svg class="btn__icon" aria-hidden="true"><use href="#i-wa"/></svg>
+        WhatsApp
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
     </div>
   </header>
 
-  <main>
+  <main id="contenido">
 
     <!-- ============================================================
-         HERO / SECCIÓN PRINCIPAL
+         HERO
          ============================================================ -->
-    <section class="hero" id="inicio">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="container hero__inner">
 
-        <!-- Texto de presentación -->
-        <div class="hero__content">
-          <span class="tag">Clases de inglés en línea</span>
-
-          <h1 class="hero__title">
-            Aprende inglés <span class="text-accent">a tu ritmo</span>
-          </h1>
-
-          <p class="hero__text">
-            Clases de inglés en línea diseñadas de acuerdo con tu nivel,
-            tus objetivos y tu ritmo de aprendizaje.
+        <div class="hero__copy">
+          <h1 class="hero__title" id="hero-title">Aprende inglés hablando inglés.</h1>
+          <p class="hero__lead">
+            Clases conversacionales en línea para empezar desde cero, ganar confianza
+            y usar el idioma en situaciones reales.
           </p>
-
           <div class="hero__actions">
-            <a href="#contacto" class="btn btn--primary">Agenda una clase</a>
-            <a href="#clases" class="btn btn--outline">Conoce las clases</a>
+            <a href="https://wa.me/" class="btn btn--primary btn--lg" data-whatsapp="info" target="_blank" rel="noopener">
+              <svg class="btn__icon" aria-hidden="true"><use href="#i-wa"/></svg>
+              Quiero aprender inglés
+            </a>
+            <a href="#clases" class="btn btn--ghost btn--lg">Conocer las clases</a>
           </div>
         </div>
 
-        <!-- Tarjeta con la fotografía del profesor -->
-        <div class="hero__media">
-          <div class="photo-card">
-            <!--
-              FOTOGRAFÍA DEL PROFESOR:
-              Coloca la foto real en "img/profesor.jpg".
-              Mientras no exista, la imagen se oculta automáticamente
-              y se muestra el icono de abajo como placeholder.
-            -->
-            <img
-              src="img/profesor.jpg"
-              alt="Fotografía del profesor de inglés"
-              class="photo-card__img"
-              onerror="this.remove()">
-
-            <!-- Placeholder (se ve solo si no hay fotografía) -->
-            <div class="photo-card__placeholder" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 10 12 5 2 10l10 5 10-5Z"/>
-                <path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/>
-                <path d="M22 10v6"/>
-              </svg>
-              <span>Foto del profesor</span>
+        <!-- Globo de conversación: palabras que pasan del español al inglés -->
+        <figure class="hero__visual">
+          <div class="bubble" id="word-swap">
+            <svg class="bubble__shape" viewBox="0 0 400 330" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M78 6h244c40 0 72 32 72 72v120c0 40-32 72-72 72H158l-74 54 12-54h-18c-40 0-72-32-72-72V78C6 38 38 6 78 6Z"/>
+            </svg>
+            <div class="bubble__body" aria-hidden="true">
+              <span class="bubble__lang" data-swap-lang>en español</span>
+              <span class="bubble__word" data-swap-word lang="es">Hola</span>
             </div>
-
-            <!-- Pequeña insignia sobre la tarjeta -->
-            <div class="photo-card__badge">
-              <span class="photo-card__badge-dot"></span>
-              Clases 1 a 1 en línea
-            </div>
+            <p class="sr-only">Hola, Hello. Gracias, Thank you. Viaje, Travel. Trabajo, Work.</p>
           </div>
-        </div>
+
+          <div class="badge-15">
+            <span class="badge-15__num">15</span>
+            <span class="badge-15__txt">años enseñando inglés</span>
+          </div>
+
+          <figcaption class="hero__caption">
+            <strong>YES!</strong> La dulzura de aprender inglés desde casa.
+          </figcaption>
+        </figure>
 
       </div>
     </section>
 
     <!-- ============================================================
-         SOBRE MÍ
+         PROPUESTA
          ============================================================ -->
-    <section class="section" id="sobre-mi">
-      <div class="container about">
+    <section class="section intro" aria-labelledby="intro-title">
+      <div class="container intro__inner">
+        <h2 class="intro__title" id="intro-title">
+          El inglés abre puertas. Aquí aprendes a cruzarlas hablando, sin presión y a tu ritmo.
+        </h2>
+        <ul class="goals" aria-label="Lo que puedes conseguir">
+          <li>Empezar desde cero</li>
+          <li>Hablar con confianza</li>
+          <li>Viajar sin nervios</li>
+          <li>Crecer en la universidad o el trabajo</li>
+        </ul>
+      </div>
+    </section>
 
-        <div class="about__content">
-          <span class="section__label">Sobre mí</span>
-          <!-- EDITAR: nombre real del profesor -->
-          <h2 class="section__title">¡Hola! Soy <span class="text-accent">Teacher Name</span></h2>
-
+    <!-- ============================================================
+         EXPERIENCIA
+         ============================================================ -->
+    <section class="experience" id="experiencia" aria-labelledby="exp-title">
+      <div class="container experience__inner">
+        <p class="experience__num" aria-hidden="true">15</p>
+        <div class="experience__copy">
+          <h2 class="experience__title" id="exp-title">Quince años enseñando inglés</h2>
           <p>
-            Soy profesor de inglés y disfruto ayudar a mis estudiantes a aprender
-            de una forma práctica, sencilla y personalizada.
+            Quince años acompañando a alumnos desde su primera frase hasta conversaciones
+            completas. Esa experiencia se nota en cada clase: sabes qué practicar, por qué
+            y cómo seguir avanzando.
           </p>
-          <p>
-            Mis clases están enfocadas en desarrollar las habilidades necesarias
-            para comunicarse en inglés con mayor seguridad.
-          </p>
-        </div>
-
-        <!-- Estadísticas (EDITAR con los datos reales) -->
-        <div class="stats">
-          <div class="stat-card">
-            <span class="stat-card__number">+5</span>
-            <span class="stat-card__label">Años de experiencia</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-card__number">100%</span>
-            <span class="stat-card__label">Clases en línea</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-card__number">1 a 1</span>
-            <span class="stat-card__label">Atención personalizada</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         CLASES
-         ============================================================ -->
-    <section class="section section--light" id="clases">
-      <div class="container">
-
-        <div class="section__header">
-          <span class="section__label">Clases</span>
-          <h2 class="section__title">Clases adaptadas a ti</h2>
-          <p class="section__subtitle">Aprende inglés de acuerdo con tus necesidades y objetivos.</p>
-        </div>
-
-        <div class="cards">
-
-          <!-- Tarjeta 1: Inglés desde cero -->
-          <article class="card">
-            <div class="card__icon" aria-hidden="true">
-              <!-- Icono: libro -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2Z"/>
-                <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7Z"/>
-              </svg>
-            </div>
-            <h3 class="card__title">Inglés desde cero</h3>
-            <p class="card__text">Ideal si quieres comenzar a aprender inglés desde las bases.</p>
-          </article>
-
-          <!-- Tarjeta 2: Conversación -->
-          <article class="card">
-            <div class="card__icon" aria-hidden="true">
-              <!-- Icono: conversación -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/>
-                <path d="M8 9h8"/>
-                <path d="M8 13h5"/>
-              </svg>
-            </div>
-            <h3 class="card__title">Conversación</h3>
-            <p class="card__text">Practica tu pronunciación, vocabulario y confianza para comunicarte.</p>
-          </article>
-
-          <!-- Tarjeta 3: Clases personalizadas -->
-          <article class="card">
-            <div class="card__icon" aria-hidden="true">
-              <!-- Icono: objetivo -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <circle cx="12" cy="12" r="6"/>
-                <circle cx="12" cy="12" r="2"/>
-              </svg>
-            </div>
-            <h3 class="card__title">Clases personalizadas</h3>
-            <p class="card__text">Contenido diseñado dependiendo de tus metas, nivel y necesidades.</p>
-          </article>
-
+          <ul class="experience__facts">
+            <li>Del nivel básico al avanzado</li>
+            <li>Individual o en pareja</li>
+            <li>En línea, desde casa</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         CÓMO FUNCIONAN LAS CLASES
+         METODOLOGÍA
          ============================================================ -->
-    <section class="section" id="como-funciona">
-      <div class="container">
-
-        <div class="section__header">
-          <span class="section__label">Proceso</span>
-          <h2 class="section__title">¿Cómo funcionan las clases?</h2>
+    <section class="section method" id="metodologia" aria-labelledby="method-title">
+      <div class="container method__inner">
+        <div class="method__head">
+          <h2 class="section-title" id="method-title">Aprende inglés usándolo.</h2>
+          <p class="section-lead">
+            Las clases son principalmente conversacionales. La gramática aparece cuando la
+            necesitas para decir lo que quieres decir, no como una lista para memorizar.
+          </p>
         </div>
 
-        <ol class="steps">
-          <li class="step">
-            <span class="step__number">1</span>
-            <h3 class="step__title">Contáctame</h3>
-            <p class="step__text">Envíame un mensaje por WhatsApp.</p>
+        <ul class="principles">
+          <li class="principle">
+            <svg class="principle__icon" aria-hidden="true"><use href="#i-talk"/></svg>
+            <h3>Hablas desde la primera clase</h3>
+            <p>Frases útiles desde el inicio, aunque empieces desde cero.</p>
           </li>
-          <li class="step">
-            <span class="step__number">2</span>
-            <h3 class="step__title">Elegimos horario</h3>
-            <p class="step__text">Buscamos un horario que funcione para ambos.</p>
+          <li class="principle">
+            <svg class="principle__icon" aria-hidden="true"><use href="#i-loop"/></svg>
+            <h3>Practicas lo que vas a vivir</h3>
+            <p>Situaciones cotidianas: viajes, trabajo, estudio y conversación.</p>
           </li>
-          <li class="step">
-            <span class="step__number">3</span>
-            <h3 class="step__title">Comenzamos</h3>
-            <p class="step__text">Nos conectamos en línea y comenzamos tu aprendizaje.</p>
+          <li class="principle">
+            <svg class="principle__icon" aria-hidden="true"><use href="#i-path"/></svg>
+            <h3>Avanzas paso a paso</h3>
+            <p>Un aprendizaje progresivo que te da confianza en cada etapa.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SITUACIONES REALES (pestañas interactivas)
+         ============================================================ -->
+    <section class="section situations" id="situaciones" aria-labelledby="sit-title">
+      <div class="container situations__inner">
+        <div class="situations__head">
+          <h2 class="section-title" id="sit-title">Inglés para la vida real</h2>
+          <p class="section-lead">Elige una situación y mira el tipo de conversación que practicamos en clase.</p>
+        </div>
+
+        <div class="situations__ui">
+          <div class="tabs" role="tablist" aria-label="Situaciones">
+            <button class="tab" role="tab" type="button" id="tab-viajes" aria-controls="dialog" aria-selected="true" data-scene="viajes">Viajes</button>
+            <button class="tab" role="tab" type="button" id="tab-restaurante" aria-controls="dialog" aria-selected="false" tabindex="-1" data-scene="restaurante">Restaurantes</button>
+            <button class="tab" role="tab" type="button" id="tab-trabajo" aria-controls="dialog" aria-selected="false" tabindex="-1" data-scene="trabajo">Trabajo</button>
+            <button class="tab" role="tab" type="button" id="tab-universidad" aria-controls="dialog" aria-selected="false" tabindex="-1" data-scene="universidad">Universidad</button>
+            <button class="tab" role="tab" type="button" id="tab-personas" aria-controls="dialog" aria-selected="false" tabindex="-1" data-scene="personas">Conocer personas</button>
+            <button class="tab" role="tab" type="button" id="tab-presentaciones" aria-controls="dialog" aria-selected="false" tabindex="-1" data-scene="presentaciones">Presentaciones</button>
+          </div>
+
+          <!-- El contenido se rellena desde js/script.js (SCENES). Este es el estado inicial. -->
+          <div class="dialog" id="dialog" role="tabpanel" aria-labelledby="tab-viajes" tabindex="0">
+            <div class="msg msg--them"><p lang="en">Hi! Is this the gate for the flight to Madrid?</p><span>¿Esta es la puerta del vuelo a Madrid?</span></div>
+            <div class="msg msg--you"><p lang="en">Yes, boarding starts in twenty minutes.</p><span>Sí, el embarque empieza en veinte minutos.</span></div>
+            <div class="msg msg--them"><p lang="en">Perfect, thank you so much!</p><span>¡Perfecto, muchas gracias!</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NIVELES
+         ============================================================ -->
+    <section class="section levels" id="niveles" aria-labelledby="levels-title">
+      <div class="container">
+        <div class="levels__head">
+          <h2 class="section-title" id="levels-title">De tu primera frase a una conversación fluida</h2>
+          <p class="section-lead">Tres niveles, un mismo camino. Fíjate en cómo crece la frase.</p>
+        </div>
+
+        <ol class="track" id="track">
+          <li class="track__step">
+            <span class="track__num" aria-hidden="true">01</span>
+            <h3 class="track__name">Básico</h3>
+            <p class="track__desc">Empieza desde cero.</p>
+            <p class="track__sample" lang="en">Hi, my name is Ana.</p>
+          </li>
+          <li class="track__step">
+            <span class="track__num" aria-hidden="true">02</span>
+            <h3 class="track__name">Intermedio</h3>
+            <p class="track__desc">Gana confianza al comunicarte.</p>
+            <p class="track__sample" lang="en">I’ve been learning English to travel more.</p>
+          </li>
+          <li class="track__step">
+            <span class="track__num" aria-hidden="true">03</span>
+            <h3 class="track__name">Avanzado</h3>
+            <p class="track__desc">Perfecciona tu inglés.</p>
+            <p class="track__sample" lang="en">Honestly, it depends on how you look at it, but I’d say it was worth it.</p>
           </li>
         </ol>
 
+        <div class="nudge">
+          <p class="nudge__text">¿No sabes cuál es tu nivel? Lo descubrimos juntos en una primera conversación.</p>
+          <a href="https://wa.me/" class="btn btn--primary" data-whatsapp="horarios" target="_blank" rel="noopener">
+            <svg class="btn__icon" aria-hidden="true"><use href="#i-wa"/></svg>
+            Consultar disponibilidad
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- ============================================================
-         PARA QUIÉN SON LAS CLASES (fondo azul oscuro)
+         MODALIDADES
          ============================================================ -->
-    <section class="section section--dark" id="para-quien">
-      <div class="container audience">
+    <section class="section modes" id="clases" aria-labelledby="modes-title">
+      <div class="container">
+        <h2 class="section-title modes__title" id="modes-title">Elige cómo quieres aprender</h2>
 
-        <div class="audience__content">
-          <span class="section__label section__label--light">Para quién son</span>
-          <h2 class="section__title">Aprende sin importar tu nivel actual</h2>
-          <p class="audience__text">
-            Las clases pueden adaptarse dependiendo de tu conocimiento
-            y de lo que quieras conseguir.
-          </p>
+        <div class="modes__grid">
+          <article class="mode">
+            <svg class="mode__art" viewBox="0 0 120 80" aria-hidden="true">
+              <path class="fill-blue" d="M26 8h56c11 0 20 9 20 20v10c0 11-9 20-20 20H50l-16 13 3-13h-11C15 58 6 49 6 38V28C6 17 15 8 26 8Z"/>
+            </svg>
+            <h3 class="mode__name">Individual</h3>
+            <p>Atención completamente personalizada. La clase sigue tu ritmo, tus dudas y tus objetivos.</p>
+          </article>
+
+          <article class="mode">
+            <svg class="mode__art" viewBox="0 0 120 80" aria-hidden="true">
+              <path class="fill-blue" d="M20 6h40c9 0 16 7 16 16v6c0 9-7 16-16 16H38l-12 10 2-10h-8C11 44 4 37 4 28v-6C4 13 11 6 20 6Z"/>
+              <path class="fill-red" d="M100 30H62c-8 0-14 6-14 14v4c0 8 6 14 14 14h22l12 9-2-9h6c8 0 14-6 14-14v-4c0-8-6-14-14-14Z"/>
+            </svg>
+            <h3 class="mode__name">En pareja</h3>
+            <p>Aprende y practica acompañado: con tu pareja, un amigo o un familiar. Conversan entre ustedes desde el primer día.</p>
+          </article>
         </div>
 
-        <ul class="checklist">
-          <li>Personas que quieren comenzar desde cero</li>
-          <li>Estudiantes que quieren mejorar su inglés</li>
-          <li>Adultos que necesitan inglés para el trabajo</li>
-          <li>Personas que quieren practicar conversación</li>
-          <li>Estudiantes que buscan atención personalizada</li>
-        </ul>
-
+        <p class="modes__note">
+          Los precios dependen de la modalidad.
+          <a href="https://wa.me/" class="link" data-whatsapp="precios" target="_blank" rel="noopener">Consultar precio por WhatsApp</a>
+        </p>
       </div>
     </section>
 
     <!-- ============================================================
-         CONTACTO
+         PÚBLICO
          ============================================================ -->
-    <section class="section" id="contacto">
-      <div class="container">
-        <div class="contact">
-          <span class="contact__eyebrow">¿Listo para comenzar?</span>
-          <h2 class="contact__title">Da el primer paso para mejorar tu inglés</h2>
-          <p class="contact__text">
-            Escríbeme por WhatsApp y cuéntame qué quieres conseguir con tus clases.
-          </p>
+    <section class="section audience" aria-labelledby="aud-title">
+      <div class="container audience__inner">
+        <h2 class="audience__title" id="aud-title">
+          Clases para
+          <span class="audience__group">adolescentes,</span>
+          <span class="audience__group">universitarios,</span>
+          <span class="audience__group">adultos</span> y
+          <span class="audience__group">adultos mayores.</span>
+        </h2>
+        <p class="section-lead">
+          Nunca es tarde ni demasiado pronto. Cada clase se adapta a tu edad, a lo que necesitas
+          y al tiempo que tienes.
+        </p>
+      </div>
+    </section>
 
-          <!--
-            Botón de WhatsApp.
-            El número se configura en js/script.js (WHATSAPP_NUMBER).
-            El href de aquí es solo un respaldo por si JavaScript no carga.
-          -->
-          <a href="https://wa.me/5210000000000"
-             class="btn btn--whatsapp"
-             data-whatsapp
-             target="_blank"
-             rel="noopener">
-            <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-            </svg>
-            Contactar por WhatsApp
-          </a>
+    <!-- ============================================================
+         CERTIFICACIONES
+         EDITAR: los nombres todavía no están confirmados.
+         Reemplaza el texto de cada <li> por el nombre oficial exacto.
+         Nombres aproximados indicados por el profesor:
+         "Bolex", "Esla To...?", "Maestro Internacional de Inglés".
+         ============================================================ -->
+    <section class="section certs" aria-labelledby="certs-title">
+      <div class="container certs__inner">
+        <h2 class="certs__title" id="certs-title">Formación</h2>
+        <ul class="certs__list">
+          <li class="cert"><svg class="cert__icon" aria-hidden="true"><use href="#i-seal"/></svg><span data-pending>Certificación por confirmar</span></li>
+          <li class="cert"><svg class="cert__icon" aria-hidden="true"><use href="#i-seal"/></svg><span data-pending>Certificación por confirmar</span></li>
+          <li class="cert"><svg class="cert__icon" aria-hidden="true"><use href="#i-seal"/></svg><span data-pending>Certificación por confirmar</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA FINAL
+         ============================================================ -->
+    <section class="cta" id="contacto" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta__panel">
+          <h2 class="cta__title" id="cta-title">Tu primera conversación en inglés empieza con un mensaje.</h2>
+          <p class="cta__text">Consulta los horarios disponibles y los precios por WhatsApp. Te respondo personalmente.</p>
+          <div class="cta__actions">
+            <a href="https://wa.me/" class="btn btn--light btn--lg" data-whatsapp="info" target="_blank" rel="noopener">
+              <svg class="btn__icon" aria-hidden="true"><use href="#i-wa"/></svg>
+              Quiero aprender inglés
+            </a>
+            <a href="https://wa.me/" class="btn btn--outline-light btn--lg" data-whatsapp="horarios" target="_blank" rel="noopener">
+              Consultar precios y horarios
+            </a>
+          </div>
+          <span class="cta__bang" aria-hidden="true"><i></i></span>
         </div>
       </div>
     </section>
@@ -309,26 +382,25 @@
        ============================================================ -->
   <footer class="footer">
     <div class="container footer__inner">
-      <p>&copy; <span id="year">2026</span> English Teacher</p>
-      <p>Clases de inglés en línea</p>
+      <div class="footer__brand">
+        <span class="brand__word" aria-hidden="true">YES<span class="brand__bang"><i></i></span></span>
+        <p>La dulzura de aprender inglés desde casa.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Enlaces del pie de página">
+        <a href="#metodologia">Metodología</a>
+        <a href="#niveles">Niveles</a>
+        <a href="#clases">Clases</a>
+        <a href="https://wa.me/" data-whatsapp="info" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+      <p class="footer__legal">&copy; <span id="year">2026</span> YES! Clases de inglés en línea.</p>
     </div>
   </footer>
 
-  <!-- ============================================================
-       BOTÓN FLOTANTE DE WHATSAPP
-       ============================================================ -->
-  <a href="https://wa.me/5210000000000"
-     class="whatsapp-float"
-     data-whatsapp
-     target="_blank"
-     rel="noopener"
-     aria-label="Contactar por WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-    </svg>
+  <!-- Botón flotante de WhatsApp (aparece después del hero) -->
+  <a href="https://wa.me/" class="wa-float" data-whatsapp="info" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <svg aria-hidden="true"><use href="#i-wa"/></svg>
   </a>
 
-  <!-- JavaScript -->
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>
