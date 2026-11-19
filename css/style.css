@@ -1417,6 +1417,159 @@ html {
   margin-top: var(--space-lg);
 }
 
+/* --- Adultos mayores: bloque destacado dentro de Público --------- */
+.seniors {
+  display: grid;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding: clamp(1.75rem, 4vw, 3.5rem) clamp(1.25rem, 4vw, 4rem);
+  background: var(--mist);
+  border-radius: var(--radius-lg);
+}
+
+.seniors > * {
+  min-width: 0;
+}
+
+.seniors__art {
+  width: min(100%, 190px);
+  height: auto;
+  overflow: visible;
+}
+
+.fill-soft { fill: var(--blue-soft); }
+.fill-white { fill: var(--white); }
+.stroke-soft { stroke: var(--blue-soft); stroke-width: 2; }
+
+.seniors__word {
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 100;
+  font-weight: 650;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  fill: var(--ink);
+}
+
+.seniors__gloss {
+  font-family: var(--font-body);
+  font-size: 15px;
+  fill: var(--ink-soft);
+}
+
+/* Estado final (también el estado sin JS): tarjetas en abanico */
+.seniors__card {
+  transform-box: fill-box;
+  transform-origin: 50% 80%;
+}
+
+.seniors__card--back  { transform: rotate(-10deg) translate(-8px, 6px); }
+.seniors__card--mid   { transform: rotate(6deg) translate(10px, -2px); }
+.seniors__card--front { transform: rotate(-1.5deg); }
+
+.seniors__bubble {
+  transform-box: fill-box;
+  transform-origin: 20% 100%;
+}
+
+.seniors__title {
+  font-size: clamp(1.75rem, 1.4vw + 1.3rem, 2.625rem);
+  line-height: 1.12;
+  max-width: 20ch;
+}
+
+.seniors__text {
+  margin-top: var(--space-sm);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 52ch;
+}
+
+.seniors__list {
+  list-style: none;
+  margin-top: var(--space-md);
+  padding: 0;
+  max-width: 40rem;
+}
+
+.seniors__list li {
+  position: relative;
+  padding: 0.8rem 0 0.8rem 2rem;
+  border-top: 1px solid var(--blue-soft);
+  font-size: var(--text-lg);
+  line-height: 1.5;
+}
+
+.seniors__list strong {
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.seniors__list li:last-child {
+  border-bottom: 1px solid var(--blue-soft);
+}
+
+/* Viñeta: un mini globo de diálogo */
+.seniors__list li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: calc(0.8rem + 0.75em - 0.4rem);
+  width: 0.8rem;
+  height: 0.7rem;
+  background: var(--blue);
+  border-radius: 50% 50% 50% 0.1rem;
+}
+
+/* Botón discreto: contorno, puede partirse en dos líneas en móvil */
+.seniors__cta {
+  margin-top: var(--space-md);
+  white-space: normal;
+  text-align: left;
+  background: var(--white);
+}
+
+@media (min-width: 640px) {
+  .seniors__art {
+    width: min(100%, 260px);
+  }
+}
+
+@media (min-width: 900px) {
+  .seniors {
+    grid-template-columns: minmax(240px, 0.75fr) 1.25fr;
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 5rem);
+  }
+
+  .seniors__art {
+    width: 100%;
+    max-width: 380px;
+    justify-self: center;
+  }
+}
+
+/* Momento de movimiento: las tarjetas se abren en abanico al entrar */
+@media (prefers-reduced-motion: no-preference) {
+  .js .seniors:not(.is-visible) .seniors__card,
+  .js .seniors:not(.is-visible) .seniors__card--front {
+    transform: none;
+  }
+
+  .js .seniors:not(.is-visible) .seniors__bubble {
+    transform: scale(0.6) translateY(8px);
+  }
+
+  .seniors__card,
+  .seniors__bubble {
+    transition: transform 900ms var(--ease-out);
+  }
+
+  .seniors__card--mid { transition-delay: 60ms; }
+  .seniors__card--back { transition-delay: 120ms; }
+  .seniors__bubble { transition-delay: 380ms; }
+}
+
 
 /* ==================================================================
    14. FORMACIÓN

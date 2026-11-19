@@ -21,11 +21,12 @@
 // abrirá el mensaje para que la persona elija el contacto.
 const WHATSAPP_NUMBER = "";
 
-// Mensajes predeterminados. Cada botón elige uno con data-whatsapp="info" | "horarios" | "precios".
+// Mensajes predeterminados. Cada botón elige uno con data-whatsapp="info" | "horarios" | "precios" | "mayores".
 const WHATSAPP_MESSAGES = {
   info: "Hola, vi la página de YES! y me gustaría recibir información sobre las clases de inglés.",
   horarios: "Hola, me gustaría consultar precios y horarios disponibles.",
   precios: "Hola, me gustaría consultar el precio de las clases de inglés.",
+  mayores: "Hola, vi la página de YES! y me gustaría recibir información sobre las clases de inglés para adultos mayores.",
 };
 
 // Pares de palabras del globo del hero.
@@ -365,11 +366,24 @@ function setupObservers() {
   const float = document.querySelector(".wa-float");
   const hero = document.getElementById("inicio");
   const contact = document.getElementById("contacto");
+  const seniors = document.querySelector(".seniors");
 
   if (!("IntersectionObserver" in window)) {
     number?.classList.add("is-visible");
     float?.classList.add("is-visible");
+    seniors?.classList.add("is-visible");
     return;
+  }
+
+  // Las tarjetas de vocabulario del bloque de adultos mayores se abren en abanico
+  if (seniors) {
+    const io = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        seniors.classList.add("is-visible");
+        io.disconnect();
+      }
+    }, { threshold: 0.35 });
+    io.observe(seniors);
   }
 
   // Se observa el contenedor: el número empieza recortado y no "intersecta"
